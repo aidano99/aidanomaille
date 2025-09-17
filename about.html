@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABBB</title>
+
+  <style> 
+
+    *, *::before, *::after {box-sizing: border-box;}
+    html, body {margin:0; padding: 0;}
+
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background: url("cubes.png") repeat, #f8f8f2;
+      background-blend-mode:multiply;
+      background-size: auto;
+    }
+
+    .main-layout {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      grid-template-columns: 1fr 3fr;
+      align-items: center;
+      min-height: 100vh;
+      padding: 0 4vw;
+    }
+
+    .nav-links {
+      grid-row: 1;
+      grid-column: 2;
+      justify-self: end; 
+      align-self: end;     
+      list-style: none;
+      margin: 0 10%;
+      padding: 0px;
+      display: flex;
+      gap: 200px;
+    }
+
+    .nav-links li a {
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .nav-links a.posts:hover {color: #ac0530}
+    .nav-links a.home:hover {color: #046637;}
+    .nav-links a.contact:hover {color: #3e337c;}
+
+    .logo {
+      grid-row: 1;
+      grid-column: 1;
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+      justify-self: start;
+      margin-top: 5%;
+    }
+
+    .about-caption {
+      grid-row: 2;
+      grid-column: 1;
+      max-width: 30%;
+      align-self: start;
+      justify-self: end;
+      margin-top: 16%;
+      margin-right: -45%;
+      color: #1b1a55;
+    }
+
+    .about-content {
+      grid-row: 2;
+      grid-column: 2;
+      max-width: 50%;
+      width: 100%;
+      justify-self: center;
+      align-self: start;
+      margin-top: 6%;
+      margin-bottom: 6%;
+      margin-left: 0%;
+      padding-left: 2%;
+      padding-right: 5%;
+      padding-top: 1%;
+      border-left: 1px solid darkred;
+      background: #f8f8f2;
+      list-style: none;
+    }
+
+    .about-content {
+      text-indent: 2em;
+      line-height: 1.5;
+    }
+
+    hr {
+      grid-row: 2;
+      grid-column: 1 / -1;
+      width: 100%;
+      border: none;
+      border-top: 2px solid darkred;
+      margin: 20px 0;
+      align-self: start;
+      justify-self: center;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="main-layout">
+
+    <img src="ABBB Logo 2.png" alt="ABBB" class="logo">
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="home">Home</a></li>
+      <li><a href="posts.html" class="posts">Posts</a></li>
+      <li><a href="contact.html" class="contact">Contact</a></li>
+    </ul>
+
+    <div class="about-caption">
+        <h1>About Me</h1>
+    </div>
+
+    <section class="about-content">
+        <p>As a current graduate student in the Biotechnology: Bioinformatics program at the University of Maryland Global Campus, I am continually inspired by the rapid advancements shaping the field. From the development of molecular techniques such as PCR and next-generation sequencing, to the breakthroughs in gene editing tools like CRISPR-Cas9, now is an incredibly exciting time to be part of biotechnology.</p>
+        <p>My primary interest lies in genomics and its many applications. One area I am particularly passionate about is the study of non-coding RNAs, such as microRNAs (miRNAs). Although only recently discovered, these molecules have already provided tremendous insight into gene regulation mechanisms, with important implications for diseases including Parkinson’s and other neurodegenerative disorders. Genomics research also plays a vital role in the development of personalized therapeutic pharmaceuticals, offering new possibilities for targeted treatments.</p>
+        <p>The aim of this website is to both reinforce and showcase the knowledge I am gaining throughout my academic journey, while also sharing it as a free learning resource for others. Thank you for visiting, and please feel free to reach out with any questions or comments — I am always happy to connect and chat.</p>
+        <p>- Aidan O'Maille</p>
+    </section>
+
+    <hr>
+
+  </div>
+
+</body>
+</html>
+
