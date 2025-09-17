@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -13,88 +13,121 @@
 
     body {
       font-family: "Times New Roman", Times, serif;
-      background: white;
-      background-image: url("cubes.png");
-      background-repeat: repeat;
+      background: url("cubes.png") repeat, #f8f8f2;
+      background-blend-mode:multiply;
       background-size: auto;
     }
 
-    .hero {
+    .main-layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
       grid-template-rows: auto 1fr;
+      grid-template-columns: 1fr 3fr;
+      align-items: center;
       min-height: 100vh;
-      padding: 0 5vw;
-      align-content: start;
-    }
-
-    .logo {
-      grid-column: 1;
-      grid-row: 1/3; 
-      justify-self: center;
-      align-self: center;
-      max-width: 350px;
-      width: 100%;
-      height: auto;
-     
+      padding: 0 4vw;
     }
 
     .nav-links {
-      grid-column: 2;
       grid-row: 1;
-      align-self: start;
-      justify-self: center;      
+      grid-column: 2;
+      justify-self: end; 
+      align-self: end;     
       list-style: none;
-      margin: 20px 0 0 0;
-      padding: 10px;
+      margin: 0 10%;
+      padding: 0px;
       display: flex;
-      gap: 80px;
+      gap: 200px;
     }
 
     .nav-links li a {
-      color: black;
+      color: #1b1a55;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 18px;
+      text-decoration: none;
     }
 
-    .nav-links a.index:hover {
-      color: #ac0530;
+    .nav-links a.home:hover {color: #ac0530}
+    .nav-links a.posts:hover {color: #ed7504;}
+    .nav-links a.about:hover {color: #046637;}
+    .nav-links a.contact:hover {color: #3e337c;}
+
+    .logo {
+      grid-row: 1;
+      grid-column: 1;
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+      justify-self: start;
+      margin-top: 5%;
     }
 
-    .nav-links a.about:hover {
-      color: #046637;
-    }
-
-    .nav-links a.contact:hover {
-      color: #3e337c;
-    }
-
-    .post-content {
-      grid-column: 2;
+    .article-title {
       grid-row: 2;
-      align-self: center;
+      grid-column: 1;
+      max-width: 30%;
+      align-self: start;
+      justify-self: end;
+      margin-top: 16%;
+      color: #1b1a55;
+    }
+
+    .article-title h1 {font-size: 2rem;}
+
+    .article-content {
+      grid-row: 2;
+      grid-column: 2;
+      max-width: 90%;
       justify-self: center;
-     
-
-      margin: 12px 0 0 0;
-      padding: 12px 14px 12px 32px;
-      scrollbar-gutter: stable;
-      height: clamp(240px, 80vh, 560px);
-      width: clamp(240px, 90vh, 560px);
-      overflow: auto;
-      border: 1px solid black;
-      border-radius: 8px;
-      background: white;
+      align-self: start;
+      margin-top: 6%;
+      margin-bottom: 6%;
+      margin-left: 5%;
+      padding-left: 2%;
+      padding-right: 5%;
+      padding-top: 1%;
+      border-left: 1px solid darkred;
+      background: #f8f8f2;
+      
     }
 
-    .post-links a {
-      color: black
+    .article-content p {
+      text-indent: 2em;
+      line-height: 1.5;
     }
 
-    .post-content h1 { margin: 0 0 .5rem; font-size: 1.6rem; }
-    .post-content h2 { margin: 1.25rem 0 .5rem; font-size: 1.25rem; }
-    .post-content p  { margin: 0 0 1rem; }
-    .post-content img { max-width: 100%; height: auto; display: block; margin: 1rem auto; }
+    .references {
+      grid-row: 2;
+      grid-column: 2;
+      max-width: 80%;
+      justify-self: center;
+      justify-items: center;
+    }
+
+    .references h2 {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .references li {
+      color:black;
+      list-style: none;
+      padding-left: 2em;
+      text-indent: -2em;
+      margin-bottom: 0.5em;
+      line-height: 1.5;
+    }
+
+
+    hr {
+      grid-row: 2;
+      grid-column: 1 / -1;
+      width: 100%;
+      border: none;
+      border-top: 2px solid darkred;
+      margin: 20px 0;
+      align-self: start;
+      justify-self: center;
+    }
 
   </style>
 
@@ -102,52 +135,50 @@
 
 <body>
 
-  <div class="hero">
+  <div class="main-layout">
 
     <img src="ABBB Logo 2.png" alt="ABBB" class="logo">
 
     <ul class="nav-links">
-      <li><a href="index.html" class="index">Home</a></li>
+      <li><a href="index.html" class="home">Home</a></li>
+      <li><a href="posts.html" class="posts">Posts</a></li>
       <li><a href="about.html" class="about">About</a></li>
       <li><a href="contact.html" class="contact">Contact</a></li>
     </ul>
-    
-    <article class="post-content">
-      <h1>Genomics and Personalized Medicine</h1>
-      
-      <p>Diseases such as cancer, neurodegenerative diseases (i.e. Parkinson’s, Alzheimer’s) and mental health disorders, have multifactorial and complex backgrounds involving genetic, environmental, and personal attributes (Yamamoto et al., 2022; Perna & Nemeroff, 2022). Even between patients with the same disease, the pathogenesis and causative factors relating to the disease can vary greatly (Rivenbark et al., 2013). How then, for a specific patient, is it possible to determine the most effective therapeutic strategy? This is where the study of genomics and its application in personalized medicine comes in. With the goal of providing in-depth, individualized patient data, researchers and medical practitioners will be able to better identify specific disease mechanisms, therapeutic targets, and biomarkers for both diagnostics and treatment development, ultimately improving patients’ prognosis and outcomes.</p>   
-      <p>The study of genomics involves the analysis of the entire genome, including intergenic interactions, and has implications in fields such as transcriptomics and proteomics (National Human Genome Research Institute, 2022; Sadee et al., 2023). Advances in this field, such as next-generation sequencing (NGS), have provided the impetus for rapid developments in its applications (Yamamoto et al., 2022). In cancer research, NGS has been utilized to identify genetic mutations and protein expression patterns in cancer patients, and develop molecular targeted and immunotherapies (Zalis et al., 2024; Zhang et al., 2021). NGS paved the way for whole-genome sequencing (WGS) and genome-wide association studies (GWAS), which have become an invaluable tool in identifying disease-related genomic variants (Yamamoto et al., 2022; Imamura & Maeda, 2024). Recent and ongoing developments in artificial intelligence (A.I.) are also expected to further increase the rate of advancement in genome sequencing and analysis (Sadee et al., 2023).</p>
-      <p>Personalized medicine targets individualized and precise treatment utilizing genetic, environmental, and disease status information specific to each patient (Yamamoto et al., 2022). Thus far, the application of personalized medicine is most prevalent in the treatment of cancer, such as biliary tract cancer, where NGS and personalized medicine ideologies have contributed to the research and development of targeted therapies, significantly improving prognosis and outcome in relation to traditional chemotherapy (Yamamoto et al., 2022; Zhang et al., 2021). Trends in personalized medicine have focused on facilitating better understanding of underlying disease mechanisms, identifying diagnostic markers to ensure accurate diagnosis, and developing therapeutic drugs to accurately target these biomarkers (Sabre et al., 2020). Personalized medicine is also being implemented in psychiatry for the treatment of mental health disorders, which are inherently complex and patient specific (Perna & Nemeroff, 2022).  Furthermore, the cost of treatment is expected to decrease while treatment satisfaction rises, due to personalized medicine precluding the need for therapeutics on a trial-and-error basis (Yamamoto et al., 2022).</p>
-      <p>Despite the potential of genomics and personalized medicine, obstacles exist that are prohibitive to its expansion. The sheer complexity of the genome and the relationships between genetic factors, interactions, and pathologic phenotypes is one of these factors (Rivenbark et al., 2013). GWAS have also shown that a majority of disease related mutations occur in untranslated regions of the genome (i.e. lncRNA’s, miRNA’s) responsible largely for gene regulation, not in protein-encoding genes themselves (Sadee et al., 2023). Large amounts of data produced by these techniques will require continual development in storage mechanisms and data analysis methods (Fernald et al., 2011). Lastly, ethical and institutional quandaries such as drug regulation and approval, confidentiality concerns with genetic data, and fair access to treatment amongst socioeconomically stratified sections of the population are of note (Sadee et al., 2023).</p>
-      <p>Although challenges remain, great strides have been made in personalized medicine and the application of genomics. Methods such as NGS and GWAS have revolutionized analysis of genetic information, and artificial intelligence is expected to be a powerful tool in continuing this trend. Personalized medicine has the potential to transform the way that treatment, and healthcare as a whole, are thought of and administered. Already, many diseases are being studied through the lens of personalized medicine, with proof-of-concept being displayed in fields such as cancer research and treatment. The benefits of personalized medicine extend to financial aspects as well, with the goal of targeted, more accurate treatment reducing financial burden on the patient. Despite ongoing challenges, it is not difficult to see why personalized medicine has the capacity to drastically alter the fields of medicine and healthcare in a positive and unprecedented way. </p>
-      <p>References 
 
-Fernald, G. H., Capriotti, E., Daneshjou, R., Karczewski, K. J., & Altman, R. B. (2011). Bioinformatics challenges for personalized medicine. Bioinformatics, 27(13), 1741–1748. https://doi.org/10.1093/bioinformatics/btr295 
-
-Imamura, M., & Maeda, S. (2024). Perspectives on genetic studies of type 2 diabetes from the genome-wide association studies era to precision medicine. Journal of Diabetes Investigation, 15(4), 410–422. https://doi.org/10.1111/jdi.14149 
-
-National Human Genome Research Institute. (2022, August 16). A brief guide to genomics. https://www.genome.gov/about-genomics/fact-sheets/A-Brief-Guide-to-Genomics 
-
-Perna, G., & Nemeroff, C. B. (2022). Can personalized medicine mitigate confirmation bias in mental health? Revista Brasileira de Psiquiatria, 44(2), 121–123. https://doi.org/10.1590/1516-4446-2021-0032 
-
-Rivenbark, A. G., O'Connor, S. M., & Coleman, W. B. (2013). Molecular and cellular heterogeneity in breast cancer: Challenges for personalized medicine. The American Journal of Pathology, 183(4), 1113–1124. https://doi.org/10.1016/j.ajpath.2013.08.002 
-
-Sabre, L., Punga, T., & Punga, A. R. (2020). Circulating miRNAs as potential biomarkers in myasthenia gravis: Tools for personalized medicine. Frontiers in Immunology, 11, 213. https://doi.org/10.3389/fimmu.2020.00213 
-
-Sadee, W., Wang, D., Hartmann, K., & Toland, A. E. (2023). Pharmacogenomics: Driving personalized medicine. Pharmacological Reviews, 75(4), 789–814. https://doi.org/10.1124/pharmrev.122.000810 
-
- 
-
-Yamamoto, Y., Kanayama, N., Nakayama, Y., & Matsushima, N. (2022). Current status, issues and future prospects of personalized medicine for each disease. Journal of Personalized Medicine, 12(3), 444. https://doi.org/10.3390/jpm12030444 
-
-Zalis, M., Viana Veloso, G. G., Aguiar, P. N. Jr., Gimenes, N., Reis, M. X., Matsas, S., & Ferreira, C. G. (2024). Next-generation sequencing impact on cancer care: Applications, challenges, and future directions. Frontiers in Genetics, 15, Article 1420190. https://doi.org/10.3389/fgene.2024.1420190 
-
-Zhang, W., Shi, J., Wang, Y., Zhou, H., Zhang, Z., Han, Z., Li, G., Yang, B., Cao, G., Ke, Y., Zhang, T., Song, T., & Qiang, L. (2021). Next-generation sequencing-guided molecular-targeted therapy and immunotherapy for biliary tract cancers. Cancer Immunology, Immunotherapy, 70(4), 1001–1014. https://doi.org/10.1007/s00262-020-02745-y </p>
-
+    <article class="article-title">
+      <h1> Genomics and Personalized Medicine: </h1>
+      <h2>Towards the Future of Healthcare</h2>
     </article>
 
-  </div>
+    <article class="article-content">
+      <p>Diseases such as cancer, neurodegenerative diseases (i.e. Parkinson’s, Alzheimer’s) and mental health disorders, have multifactorial and complex backgrounds involving genetic, environmental, and personal attributes (Yamamoto et al., 2022; Perna & Nemeroff, 2022). Even between patients with the same disease, the pathogenesis and causative factors relating to the disease can vary greatly (Rivenbark et al., 2013). How then, for a specific patient, is it possible to determine the most effective therapeutic strategy? This is where the study of genomics and its application in personalized medicine comes in. With the goal of providing in-depth, individualized patient data, researchers and medical practitioners will be able to better identify specific disease mechanisms, therapeutic targets, and biomarkers for both diagnostics and treatment development, ultimately improving patients’ prognosis and outcomes. </p>
+      <p>The study of genomics involves the analysis of the entire genome, including intergenic interactions, and has implications in fields such as transcriptomics and proteomics (National Human Genome Research Institute, 2022; Sadee et al., 2023). Advances in this field, such as next-generation sequencing (NGS), have provided the impetus for rapid developments in its applications (Yamamoto et al., 2022). In cancer research, NGS has been utilized to identify genetic mutations and protein expression patterns in cancer patients, and develop molecular targeted and immunotherapies (Zalis et al., 2024; Zhang et al., 2021). NGS paved the way for whole-genome sequencing (WGS) and genome-wide association studies (GWAS), which have become an invaluable tool in identifying disease-related genomic variants (Yamamoto et al., 2022; Imamura & Maeda, 2024). Recent and ongoing developments in artificial intelligence (A.I.) are also expected to further increase the rate of advancement in genome sequencing and analysis (Sadee et al., 2023).</p>  
+      <p>Personalized medicine targets individualized and precise treatment utilizing genetic, environmental, and disease status information specific to each patient (Yamamoto et al., 2022). Thus far, the application of personalized medicine is most prevalent in the treatment of cancer, such as biliary tract cancer, where NGS and personalized medicine ideologies have contributed to the research and development of targeted therapies, significantly improving prognosis and outcome in relation to traditional chemotherapy (Yamamoto et al., 2022; Zhang et al., 2021). Trends in personalized medicine have focused on facilitating better understanding of underlying disease mechanisms, identifying diagnostic markers to ensure accurate diagnosis, and developing therapeutic drugs to accurately target these biomarkers (Sabre et al., 2020). Personalized medicine is also being implemented in psychiatry for the treatment of mental health disorders, which are inherently complex and patient specific (Perna & Nemeroff, 2022).  Furthermore, the cost of treatment is expected to decrease while treatment satisfaction rises, due to personalized medicine precluding the need for therapeutics on a trial-and-error basis (Yamamoto et al., 2022). </p>
+      <p>Despite the potential of genomics and personalized medicine, obstacles exist that are prohibitive to its expansion. The sheer complexity of the genome and the relationships between genetic factors, interactions, and pathologic phenotypes is one of these factors (Rivenbark et al., 2013). GWAS have also shown that a majority of disease related mutations occur in untranslated regions of the genome (i.e. lncRNA’s, miRNA’s) responsible largely for gene regulation, not in protein-encoding genes themselves (Sadee et al., 2023). Large amounts of data produced by these techniques will require continual development in storage mechanisms and data analysis methods (Fernald et al., 2011). Lastly, ethical and institutional quandaries such as drug regulation and approval, confidentiality concerns with genetic data, and fair access to treatment amongst socioeconomically stratified sections of the population are of note (Sadee et al., 2023).</p>
+      <p>Although challenges remain, great strides have been made in personalized medicine and the application of genomics. Methods such as NGS and GWAS have revolutionized analysis of genetic information, and artificial intelligence is expected to be a powerful tool in continuing this trend. Personalized medicine has the potential to transform the way that treatment, and healthcare as a whole, are thought of and administered. Already, many diseases are being studied through the lens of personalized medicine, with proof-of-concept being displayed in fields such as cancer research and treatment. The benefits of personalized medicine extend to financial aspects as well, with the goal of targeted, more accurate treatment reducing financial burden on the patient. Despite ongoing challenges, it is not difficult to see why personalized medicine has the capacity to drastically alter the fields of medicine and healthcare in a positive and unprecedented way.   </p>
+        <section class="references">
+          <h2>References</h2>
+          <ul>
+            <li>Fernald, G. H., Capriotti, E., Daneshjou, R., Karczewski, K. J., & Altman, R. B. (2011). Bioinformatics challenges for personalized medicine. Bioinformatics, 27(13), 1741–1748. https://doi.org/10.1093/bioinformatics/btr295 </li>
+            <li>Imamura, M., & Maeda, S. (2024). Perspectives on genetic studies of type 2 diabetes from the genome-wide association studies era to precision medicine. Journal of Diabetes Investigation, 15(4), 410–422. https://doi.org/10.1111/jdi.14149 </li>
+            <li>National Human Genome Research Institute. (2022, August 16). A brief guide to genomics. https://www.genome.gov/about-genomics/fact-sheets/A-Brief-Guide-to-Genomics </li>
+            <li>Perna, G., & Nemeroff, C. B. (2022). Can personalized medicine mitigate confirmation bias in mental health? Revista Brasileira de Psiquiatria, 44(2), 121–123. https://doi.org/10.1590/1516-4446-2021-0032 </li>
+            <li>Rivenbark, A. G., O'Connor, S. M., & Coleman, W. B. (2013). Molecular and cellular heterogeneity in breast cancer: Challenges for personalized medicine. The American Journal of Pathology, 183(4), 1113–1124. https://doi.org/10.1016/j.ajpath.2013.08.002 </li>
+            <li>Sabre, L., Punga, T., & Punga, A. R. (2020). Circulating miRNAs as potential biomarkers in myasthenia gravis: Tools for personalized medicine. Frontiers in Immunology, 11, 213. https://doi.org/10.3389/fimmu.2020.00213 </li>
+            <li>Sadee, W., Wang, D., Hartmann, K., & Toland, A. E. (2023). Pharmacogenomics: Driving personalized medicine. Pharmacological Reviews, 75(4), 789–814. https://doi.org/10.1124/pharmrev.122.000810 </li>
+            <li>Yamamoto, Y., Kanayama, N., Nakayama, Y., & Matsushima, N. (2022). Current status, issues and future prospects of personalized medicine for each disease. Journal of Personalized Medicine, 12(3), 444. https://doi.org/10.3390/jpm12030444 </li>
+            <li>Zalis, M., Viana Veloso, G. G., Aguiar, P. N. Jr., Gimenes, N., Reis, M. X., Matsas, S., & Ferreira, C. G. (2024). Next-generation sequencing impact on cancer care: Applications, challenges, and future directions. Frontiers in Genetics, 15, Article 1420190. https://doi.org/10.3389/fgene.2024.1420190 </li>
+            <li>Zhang, W., Shi, J., Wang, Y., Zhou, H., Zhang, Z., Han, Z., Li, G., Yang, B., Cao, G., Ke, Y., Zhang, T., Song, T., & Qiang, L. (2021). Next-generation sequencing-guided molecular-targeted therapy and immunotherapy for biliary tract cancers. Cancer Immunology, Immunotherapy, 70(4), 1001–1014. https://doi.org/10.1007/s00262-020-02745-y </li>
+          </ul>
+        </section>
+    </article>
 
+    
+
+    <hr>
+
+  </div>
 
 </body>
 </html>
