@@ -80,6 +80,10 @@
       list-style: none;
     }
 
+    .content li {
+        margin: 1rem;
+    }
+
     .content li a {
       color:#1b1a55;
       font-size: 1.2em;
