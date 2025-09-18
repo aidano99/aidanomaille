@@ -151,3 +151,45 @@
     border-left: none;  */
   }
 }
+
+@media (max-width: 768px) {
+  .article.main-layout {
+    display: grid;
+    grid-template-rows: 4;
+  }
+   .article .logo {
+    grid-row: 1;  
+    width: clamp(120px, 30vw, 200px);
+    margin-top: 1rem;
+    justify-self: center;
+  }
+
+    .article .nav-links {
+    grid-row: 2;
+    display: flex; 
+    align-self: start;
+    justify-self: center;
+    margin-top: 3rem;
+  }
+
+  .article .title {
+    grid-row: 3;
+    justify-self: start;
+    /* align-self: end;
+    max-width: 90%; */
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .article .content {
+    grid-row: 4;
+    margin-top: 2rem;
+    /* margin: 2rem 0 3rem 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-left: none;  */
+  }
+    
+    
+  }
+}
