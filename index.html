@@ -22,6 +22,7 @@
 
     .main-layout {
       display: grid;
+      grid-template-rows: 1fr auto;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
       min-height: 100vh;
@@ -57,6 +58,19 @@
       height: auto;
       justify-self: center;
       align-self: center;
+    }
+
+    .footer {
+      grid-column: 1 / 4;
+      grid-row: 2;
+      font-size: clamp(0.6rem, 0.8rem, 1rem);
+      color: darkslategrey;
+      text-align: center;
+      background: none;
+      border: none;
+      font-style: italic;
+      
+
     }
 
     @media (max-width: 600px) {
@@ -101,6 +115,10 @@
       <li><a href="about.html" class="about">About</a></li>
       <li><a href="contact.html" class="contact">Contact</a></li>
     </ul>
+
+    <textarea class="footer">
+      © 2025 Aidan O'Maille. All rights reserved.
+    </textarea>
 
   </div>
 
