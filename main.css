@@ -3,7 +3,7 @@
 
     body {
       font-family: "Times New Roman", Times, serif;
-      background: url("cubes.png") repeat, #f8f8f2;
+      background: url("backgroun-grain-2.png") repeat, #f8f8f2;
       background-blend-mode:multiply;
       background-size: auto;
     }
@@ -76,7 +76,7 @@
       padding-right: 5%;
       padding-top: 1%;
       border-left: 1px solid darkred;
-      background: #f8f8f2;
+      background: none;
       list-style: none;
     }
 
@@ -94,6 +94,26 @@
       color:#1b1a55;
       font-size: 1.0em;
       padding-left: 2em
+    }
+
+    .contact .content {
+      grid-row: 3;
+      grid-column: 1 / 4;
+      width: 80vw;
+      /* width: clamp(150px, 25vw, 300px); */
+      justify-self: center;
+      align-self: start;
+      text-align: center;
+      /* margin-top: 6%; */
+      margin-bottom: 6%;
+      margin-left: 3%;
+      padding-left: 2%;
+      padding-right: 5%;
+      padding-top: 1%;
+      border: none;
+      /* border-left: 1px solid darkred; */
+      background: none;
+      list-style: none;
     }
 
     hr {
